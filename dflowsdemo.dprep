@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 63,
+  "id": "94c03924-21d0-4857-84bc-bfe5bc91a6d2",
+  "activities": [
+    {
+      "id": "12aaf3ce-2327-4871-96a4-f566df527f49",
+      "name": "output",
+      "blocks": [
+        {
+          "id": "5d72163c-927d-47e5-9251-3c76c8d9bb04",
+          "type": "Microsoft.DPrep.GetFilesBlock",
+          "arguments": {
+            "isArchive": false,
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "./output.csv"
+                }
+              ]
+            }
+          },
+          "localData": {},
+          "isEnabled": true,
+          "name": null,
+          "annotation": null
+        },
+        {
+          "id": "00fc5f97-3495-44e0-a4a1-fc33dcd7bd11",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "columnHeadersMode": 3,
+            "fileEncoding": 0,
+            "handleQuotedLineBreaks": false,
+            "preview": false,
+            "separator": ",",
+            "skipRows": 0,
+            "skipRowsMode": 0
+          },
+          "localData": {},
+          "isEnabled": true,
+          "name": null,
+          "annotation": null
+        },
+        {
+          "id": "e0faea48-bb75-4998-ac3e-238ae91472f6",
+          "type": "Microsoft.DPrep.DropColumnsBlock",
+          "arguments": {
+            "columns": {
+              "type": 0,
+              "details": {
+                "selectedColumns": [
+                  "Path"
+                ]
+              }
+            }
+          },
+          "localData": {},
+          "isEnabled": true,
+          "name": null,
+          "annotation": null
+        },
+        {
+          "id": "0e117b9e-ff67-4ac8-b5d3-e25d082f4519",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "DiastolicBloodPressure"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "DiabetesPedigree"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "PlasmaGlucose"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "SerumInsulin"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "Physician"
+                  }
+                },
+                "typeProperty": 0
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "Pregnancies"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "BMI"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "Diabetic"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "PatientID"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "TricepsThickness"
+                  }
+                },
+                "typeProperty": 3
+              },
+              {
+                "column": {
+                  "type": 2,
+                  "details": {
+                    "selectedColumn": "Age"
+                  }
+                },
+                "typeProperty": 3
+              }
+            ]
+          },
+          "localData": {},
+          "isEnabled": true,
+          "name": null,
+          "annotation": null
+        }
+      ],
+      "inspectors": []
+    }
+  ],
+  "runConfigurations": []
+}

@@ -1,0 +1,1477 @@
+2019-04-25 09:40:27,629 - INFO - 39 : Starting usage telemetry collection
+2019-04-25 09:40:30,339 - INFO - 400 : Extracting user Data
+2019-04-25 09:40:30,342 - INFO - 434 : Start creating parent run with DTO:  - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize.
+2019-04-25 09:40:33,028 - INFO - 65 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5]SDK dependencies versions:{"azureml-widgets": "1.0.18", "azureml-train": "1.0.18", "azureml-train-restclients-hyperdrive": "1.0.18", "azureml-train-core": "1.0.18", "azureml-train-automl": "1.0.18", "azureml-telemetry": "1.0.18", "azureml-sdk": "1.0.18", "azureml-pipeline": "1.0.18", "azureml-pipeline-steps": "1.0.18", "azureml-pipeline-core": "1.0.18", "azureml-dataprep": "1.0.16", "azureml-dataprep-native": "11.2.2", "azureml-core": "1.0.18", "azureml-contrib": "0.1.0.1179783", "azureml-contrib-widgets": "0.1.0.1179783", "azureml-contrib-tensorboard": "0.1.0.1179783", "azureml-contrib-server": "0.1.0.1179783", "azureml-contrib-notebook": "1.0.18", "azureml-contrib-explain-model": "0.1.0.1179783", "azureml-contrib-daskonbatch": "0.1.0.1179783"}.
+2019-04-25 09:40:33,810 - INFO - 459 : [ParentRunID:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5] Local run using input X and y.
+2019-04-25 09:40:33,811 - INFO - 462 : Parent Run ID: AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5
+2019-04-25 09:40:33,812 - INFO - 920 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5]Input X datatype is <class 'numpy.ndarray'>, shape is (12000, 10), datasize is 960000.
+2019-04-25 09:40:33,812 - INFO - 920 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5]Input y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:40:33,813 - INFO - 93 : ActivityStarted, PreProcess
+2019-04-25 09:40:33,813 - INFO - 493 : The size of raw data is: 1056395
+2019-04-25 09:40:33,814 - INFO - 32 : Pre-processing user data
+2019-04-25 09:40:33,819 - INFO - 773 : [YCol]RawFeatureStats:{"num_unique_vals": "2", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:33,820 - INFO - 47 : Featurizer mapper not found so learn all the transforms
+2019-04-25 09:40:33,841 - INFO - 47 : Start getting transformers.
+2019-04-25 09:40:33,873 - INFO - 773 : [XColNum:0]RawFeatureStats:{"num_unique_vals": "11939", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:33,874 - INFO - 47 : Preprocess transformer for col 0, datatype: object, detected datatype Numeric
+2019-04-25 09:40:33,923 - INFO - 773 : [XColNum:1]RawFeatureStats:{"num_unique_vals": "15", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:33,942 - INFO - 47 : Preprocess transformer for col 1, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,031 - INFO - 773 : [XColNum:2]RawFeatureStats:{"num_unique_vals": "149", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,031 - INFO - 47 : Preprocess transformer for col 2, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,047 - INFO - 773 : [XColNum:3]RawFeatureStats:{"num_unique_vals": "90", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,050 - INFO - 47 : Preprocess transformer for col 3, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,068 - INFO - 773 : [XColNum:4]RawFeatureStats:{"num_unique_vals": "67", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,069 - INFO - 47 : Preprocess transformer for col 4, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,078 - INFO - 773 : [XColNum:5]RawFeatureStats:{"num_unique_vals": "642", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,079 - INFO - 47 : Preprocess transformer for col 5, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,180 - INFO - 773 : [XColNum:6]RawFeatureStats:{"num_unique_vals": "12000", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,181 - INFO - 47 : Preprocess transformer for col 6, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,199 - INFO - 773 : [XColNum:7]RawFeatureStats:{"num_unique_vals": "11999", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,200 - INFO - 47 : Preprocess transformer for col 7, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,206 - INFO - 773 : [XColNum:8]RawFeatureStats:{"num_unique_vals": "56", "total_number_vals": "12000", "lengths": "null", "num_unique_lens": "0", "column_type": "\"floating\"", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,207 - INFO - 47 : Preprocess transformer for col 8, datatype: object, detected datatype Numeric
+2019-04-25 09:40:34,266 - INFO - 773 : [XColNum:9]RawFeatureStats:{"num_unique_vals": "109", "total_number_vals": "12000", "lengths": "{}", "num_unique_lens": "12", "column_type": "\"string\"", "average_entry_length": "13.870416666666667", "average_number_spaces": "1.0175", "cardinality_ratio": "0.009083333333333334", "num_na": "{}", "is_datetime": "false"}
+2019-04-25 09:40:34,267 - INFO - 47 : Preprocess transformer for col 9, datatype: object, detected datatype Categorical
+2019-04-25 09:40:34,267 - INFO - 47 : Transforms:
+col 0, transformers: Imputer
+col 1, transformers: Imputer
+col 2, transformers: Imputer
+col 3, transformers: Imputer
+col 4, transformers: Imputer
+col 5, transformers: Imputer
+col 6, transformers: Imputer
+col 7, transformers: Imputer
+col 8, transformers: Imputer
+col 9, transformers: StringCastTransformer	CountVectorizer
+2019-04-25 09:40:34,267 - INFO - 47 : The stats_computation for raw data are following:-
+	Number of hashes features: 0
+	Number of Text features: 0
+	Number of Categorical features: 1
+	Number of Ignore features: 0
+	Number of CategoricalHash features: 0
+	Number of DateTime features: 0
+	Number of Numeric features: 9
+2019-04-25 09:40:34,268 - INFO - 47 : End getting transformers.
+2019-04-25 09:40:34,735 - INFO - 344 : Creating cross validations
+2019-04-25 09:40:34,742 - INFO - 360 : Found cross validation type: KFoldCrossValidationSplit
+2019-04-25 09:40:34,743 - INFO - 371 : Creating featurized version of CV splits data
+2019-04-25 09:40:35,117 - INFO - 393 : _X_train_transformed: (9600, 118)
+y_train: (9600,)
+X_test_transformed: (2400, 118)
+y_test: (2400,)
+size of split is: 1541912
+
+2019-04-25 09:40:35,150 - INFO - 366 : Adding pickle key: featurized_cv_split_0
+2019-04-25 09:40:35,423 - INFO - 393 : _X_train_transformed: (9600, 118)
+y_train: (9600,)
+X_test_transformed: (2400, 118)
+y_test: (2400,)
+size of split is: 1541912
+
+2019-04-25 09:40:35,456 - INFO - 366 : Adding pickle key: featurized_cv_split_1
+2019-04-25 09:40:35,753 - INFO - 393 : _X_train_transformed: (9600, 118)
+y_train: (9600,)
+X_test_transformed: (2400, 118)
+y_test: (2400,)
+size of split is: 1541912
+
+2019-04-25 09:40:35,800 - INFO - 366 : Adding pickle key: featurized_cv_split_2
+2019-04-25 09:40:36,355 - INFO - 393 : _X_train_transformed: (9600, 118)
+y_train: (9600,)
+X_test_transformed: (2400, 118)
+y_test: (2400,)
+size of split is: 1541912
+
+2019-04-25 09:40:36,402 - INFO - 366 : Adding pickle key: featurized_cv_split_3
+2019-04-25 09:40:36,691 - INFO - 393 : _X_train_transformed: (9600, 118)
+y_train: (9600,)
+X_test_transformed: (2400, 118)
+y_test: (2400,)
+size of split is: 1541912
+
+2019-04-25 09:40:36,729 - INFO - 366 : Adding pickle key: featurized_cv_split_4
+2019-04-25 09:40:36,730 - INFO - 452 : Completed creating cross-validation folds and featurizing them
+2019-04-25 09:40:36,869 - INFO - 350 : The size of the transformed data is: 1543050
+2019-04-25 09:40:37,232 - INFO - 501 : The size of transformed data is: 1543050
+2019-04-25 09:40:37,233 - INFO - 114 : ActivityCompleted: Activity=PreProcess, HowEnded=Success, Duration=3420.36 [ms]
+2019-04-25 09:40:37,694 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:39,302 - INFO - 563 : Start local loop.
+2019-04-25 09:40:39,302 - INFO - 566 : Start iteration: 0
+2019-04-25 09:40:39,303 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:40:39,304 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:40:39,305 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:40:40,496 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1192.23 [ms]
+2019-04-25 09:40:40,497 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": "sqrt", "min_samples_leaf": 0.05040306135985514, "min_samples_split": 0.002602463309528381, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "97979b3edafb81e81476b4a3c3ac02da4c90eed5"}
+2019-04-25 09:40:42,194 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:40:42,389 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_0]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:40:42,389 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_0]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:40:42,391 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:42,392 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_0] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:40:42,392 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_0] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:40:42,392 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_0
+2019-04-25 09:40:42,393 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:42,394 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:42,395 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:42,396 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": "sqrt", "min_samples_leaf": 0.05040306135985514, "min_samples_split": 0.002602463309528381, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "97979b3edafb81e81476b4a3c3ac02da4c90eed5"}.
+2019-04-25 09:40:42,396 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:40:42,396 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:40:47,750 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:56,982 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:40:56,984 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:40:56,994 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:57,339 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=345.75[ms]
+2019-04-25 09:40:57,340 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:57,340 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:57,346 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=5.94[ms]
+2019-04-25 09:40:57,347 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:57,747 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=407.1[ms]
+2019-04-25 09:40:57,783 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:57,845 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:58,121 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=337.93[ms]
+2019-04-25 09:40:58,121 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:58,122 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:58,131 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=8.54[ms]
+2019-04-25 09:40:58,131 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:58,143 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=22.05[ms]
+2019-04-25 09:40:58,152 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:58,346 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=193.27[ms]
+2019-04-25 09:40:58,367 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:58,404 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:58,432 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=27.86[ms]
+2019-04-25 09:40:58,434 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:58,456 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=88.98[ms]
+2019-04-25 09:40:58,465 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:58,604 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=139.01[ms]
+2019-04-25 09:40:58,605 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:58,605 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:58,614 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=8.82[ms]
+2019-04-25 09:40:58,614 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:58,624 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=18.83[ms]
+2019-04-25 09:40:58,632 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:58,890 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=257.35[ms]
+2019-04-25 09:40:58,890 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:58,891 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:58,903 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=12.04[ms]
+2019-04-25 09:40:58,904 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:58,917 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=27.4[ms]
+2019-04-25 09:40:58,917 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=1933.01[ms]
+2019-04-25 09:40:58,918 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:40:58,924 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=5.99[ms]
+2019-04-25 09:40:58,925 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=1943.24[ms]
+2019-04-25 09:40:58,951 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:40:58,951 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:40:58,953 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:40:59,224 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=271.43[ms]
+2019-04-25 09:40:59,225 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:40:59,225 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:40:59,250 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=24.99[ms]
+2019-04-25 09:40:59,251 - INFO - 749 : Computing regression metrics
+2019-04-25 09:40:59,809 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=584.62[ms]
+2019-04-25 09:40:59,810 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=859.5[ms]
+2019-04-25 09:40:59,810 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=859.5[ms]
+2019-04-25 09:40:59,811 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=17415.88[ms]
+2019-04-25 09:40:59,812 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:40:59,813 - INFO - 161 : Pipeline execution finished with a score of 0.7288150683125003
+2019-04-25 09:40:59,813 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:40:59,814 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:41:07,455 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:41:07,475 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:41:07,485 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:41:07,502 - INFO - 267 : pipeline_id:97979b3edafb81e81476b4a3c3ac02da4c90eed5, The following metrics have been logged for the child run: {'residuals': <class 'dict'>, 'normalized_mean_absolute_error': 0.37978599883910025, 'explained_variance': 0.24064605445286266, 'spearman_correlation': 0.7288150683125003, 'median_absolute_error': 0.318863498099779, 'mean_absolute_error': 0.37978599883910025, 'root_mean_squared_log_error': 0.2858249116955959, 'r2_score': 0.2398615967735976, 'normalized_root_mean_squared_log_error': 0.412358182665762, 'predicted_true': <class 'dict'>, 'root_mean_squared_error': 0.4088920363514562, 'normalized_median_absolute_error': 0.318863498099779, 'normalized_root_mean_squared_error': 0.4088920363514562, 'predict_time': <class 'float'>, 'train time': <class 'float'>, 'fit_time': <class 'float'>}.
+2019-04-25 09:41:07,912 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:14,495 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=14681.73[ms]
+2019-04-25 09:41:16,940 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:16,942 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=34747.51 [ms]
+2019-04-25 09:41:16,953 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=37649.7 [ms]
+2019-04-25 09:41:16,956 - INFO - 566 : Start iteration: 1
+2019-04-25 09:41:16,963 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:41:16,965 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:41:16,966 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:41:17,915 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:18,740 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1775.7 [ms]
+2019-04-25 09:41:18,741 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.006151578686713196, "min_samples_split": 0.010734188827013528, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "509be37c39972b34deee7a2fde5a747d91172465"}
+2019-04-25 09:41:20,401 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:41:20,402 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_1]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:41:20,402 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_1]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:41:20,404 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:20,405 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_1] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:41:20,406 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_1] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:41:20,406 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_1
+2019-04-25 09:41:20,408 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:20,410 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:20,412 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:20,412 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.006151578686713196, "min_samples_split": 0.010734188827013528, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "509be37c39972b34deee7a2fde5a747d91172465"}.
+2019-04-25 09:41:20,424 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:41:20,441 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:41:27,940 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:32,556 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:41:32,558 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:41:32,574 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:36,292 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3718.32[ms]
+2019-04-25 09:41:36,293 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:36,293 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:36,304 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=11.0[ms]
+2019-04-25 09:41:36,305 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:36,325 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=32.26[ms]
+2019-04-25 09:41:36,337 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:37,955 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:39,274 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=2936.68[ms]
+2019-04-25 09:41:39,288 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:39,303 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:39,374 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=71.0[ms]
+2019-04-25 09:41:39,375 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:39,436 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=148.0[ms]
+2019-04-25 09:41:39,576 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:42,682 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3106.04[ms]
+2019-04-25 09:41:42,684 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:42,697 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:42,745 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=48.0[ms]
+2019-04-25 09:41:42,745 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:42,759 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=75.0[ms]
+2019-04-25 09:41:42,770 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:45,331 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=2561.08[ms]
+2019-04-25 09:41:45,333 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:45,334 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:45,347 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=13.15[ms]
+2019-04-25 09:41:45,348 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:45,364 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=31.1[ms]
+2019-04-25 09:41:45,376 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:48,073 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:48,547 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3171.34[ms]
+2019-04-25 09:41:48,548 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:48,549 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:48,565 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=17.0[ms]
+2019-04-25 09:41:48,566 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:48,578 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=29.69[ms]
+2019-04-25 09:41:48,578 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=16019.81[ms]
+2019-04-25 09:41:48,580 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:41:48,587 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=7.58[ms]
+2019-04-25 09:41:48,600 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=16044.4[ms]
+2019-04-25 09:41:48,673 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:41:48,674 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:41:48,675 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:41:52,558 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=3881.58[ms]
+2019-04-25 09:41:52,559 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:41:52,569 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:41:52,614 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=45.0[ms]
+2019-04-25 09:41:52,614 - INFO - 749 : Computing regression metrics
+2019-04-25 09:41:52,621 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=62.0[ms]
+2019-04-25 09:41:52,622 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=3948.24[ms]
+2019-04-25 09:41:52,622 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=3949.11[ms]
+2019-04-25 09:41:52,622 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=32181.47[ms]
+2019-04-25 09:41:52,623 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:41:52,623 - INFO - 161 : Pipeline execution finished with a score of 0.7617235392263728
+2019-04-25 09:41:52,624 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:41:52,624 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:41:57,150 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:41:57,151 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:41:57,152 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:41:57,153 - INFO - 267 : pipeline_id:509be37c39972b34deee7a2fde5a747d91172465, The following metrics have been logged for the child run: {'r2_score': 0.7054086633283468, 'root_mean_squared_log_error': 0.17850670806857996, 'normalized_mean_absolute_error': 0.13834200166332783, 'median_absolute_error': 0.03454236069324333, 'root_mean_squared_error': 0.25458987139753814, 'residuals': <class 'dict'>, 'predicted_true': <class 'dict'>, 'explained_variance': 0.7056952936968125, 'spearman_correlation': 0.7617235392263728, 'mean_absolute_error': 0.13834200166332783, 'normalized_root_mean_squared_error': 0.25458987139753814, 'normalized_root_mean_squared_log_error': 0.2575307424959542, 'normalized_median_absolute_error': 0.03454236069324333, 'fit_time': <class 'float'>, 'train time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:41:58,148 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:08,154 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:17,410 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=24785.78[ms]
+2019-04-25 09:42:18,160 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:20,194 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:20,198 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=59797.11 [ms]
+2019-04-25 09:42:20,255 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=63292.74 [ms]
+2019-04-25 09:42:20,257 - INFO - 566 : Start iteration: 2
+2019-04-25 09:42:20,258 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:42:20,259 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:42:20,260 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:42:22,035 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1775.5 [ms]
+2019-04-25 09:42:22,036 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.0023646822772690063, "min_samples_split": 0.052853885930792446, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "b4bd922dbaf8213366b177d822de2b50eb1fc58b"}
+2019-04-25 09:42:23,655 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:42:23,655 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_2]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:42:23,655 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_2]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:42:23,657 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:23,658 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_2] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:42:23,659 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_2] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:42:23,659 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_2
+2019-04-25 09:42:23,660 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:23,662 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:23,664 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:23,665 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.0023646822772690063, "min_samples_split": 0.052853885930792446, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "b4bd922dbaf8213366b177d822de2b50eb1fc58b"}.
+2019-04-25 09:42:23,667 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:42:23,668 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:42:28,163 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:35,612 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:42:35,615 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:42:35,632 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:36,221 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=589.62[ms]
+2019-04-25 09:42:36,223 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:36,225 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:36,313 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=87.76[ms]
+2019-04-25 09:42:36,314 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:36,699 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=475.81[ms]
+2019-04-25 09:42:36,710 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:37,185 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=474.72[ms]
+2019-04-25 09:42:37,185 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:37,186 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:37,193 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.17[ms]
+2019-04-25 09:42:37,194 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:37,202 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=17.21[ms]
+2019-04-25 09:42:37,212 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:37,604 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=391.87[ms]
+2019-04-25 09:42:37,605 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:37,605 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:37,610 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=5.17[ms]
+2019-04-25 09:42:37,611 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:37,624 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=19.14[ms]
+2019-04-25 09:42:37,636 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:38,036 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=399.06[ms]
+2019-04-25 09:42:38,036 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:38,037 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:38,046 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=8.0[ms]
+2019-04-25 09:42:38,047 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:38,066 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=30.0[ms]
+2019-04-25 09:42:38,076 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:38,182 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:38,532 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=456.07[ms]
+2019-04-25 09:42:38,533 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:38,533 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:38,542 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.18[ms]
+2019-04-25 09:42:38,542 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:38,553 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=19.44[ms]
+2019-04-25 09:42:38,553 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=2938.22[ms]
+2019-04-25 09:42:38,555 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:42:38,562 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=6.08[ms]
+2019-04-25 09:42:38,562 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=2950.29[ms]
+2019-04-25 09:42:38,576 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:42:38,576 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:42:38,577 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:42:39,105 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=527.96[ms]
+2019-04-25 09:42:39,106 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:42:39,106 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:42:39,121 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=14.99[ms]
+2019-04-25 09:42:39,121 - INFO - 749 : Computing regression metrics
+2019-04-25 09:42:39,136 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=29.99[ms]
+2019-04-25 09:42:39,136 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=560.04[ms]
+2019-04-25 09:42:39,137 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=560.04[ms]
+2019-04-25 09:42:39,137 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=15468.89[ms]
+2019-04-25 09:42:39,138 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:39,138 - INFO - 161 : Pipeline execution finished with a score of 0.7465750781441362
+2019-04-25 09:42:39,139 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:42:39,139 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:42:42,619 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:42:42,621 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:42:42,622 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:42:42,623 - INFO - 267 : pipeline_id:b4bd922dbaf8213366b177d822de2b50eb1fc58b, The following metrics have been logged for the child run: {'normalized_median_absolute_error': 0.17803791702075017, 'residuals': <class 'dict'>, 'explained_variance': 0.6084144450692907, 'normalized_root_mean_squared_log_error': 0.29916053847144186, 'root_mean_squared_error': 0.2936374090118666, 'spearman_correlation': 0.7465750781441362, 'normalized_mean_absolute_error': 0.2209729597278643, 'r2_score': 0.6082527541488594, 'predicted_true': <class 'dict'>, 'root_mean_squared_log_error': 0.20736228377627497, 'median_absolute_error': 0.17803791702075017, 'normalized_root_mean_squared_error': 0.2936374090118666, 'mean_absolute_error': 0.2209729597278643, 'predict_time': <class 'float'>, 'fit_time': <class 'float'>, 'train time': <class 'float'>}.
+2019-04-25 09:42:48,188 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:50,912 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=11772.28[ms]
+2019-04-25 09:42:53,295 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:53,296 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=29641.3 [ms]
+2019-04-25 09:42:53,300 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=33041.53 [ms]
+2019-04-25 09:42:53,301 - INFO - 566 : Start iteration: 3
+2019-04-25 09:42:53,302 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:42:53,303 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:42:53,305 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:42:55,217 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1914.48 [ms]
+2019-04-25 09:42:55,218 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "LightGBMRegressor", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"boosting_type": "gbdt", "colsample_bytree": 1, "learning_rate": 0.1052678947368421, "max_bin": 7, "max_depth": 7, "min_data_in_leaf": 0.001953125, "min_split_gain": 0.7368421052631579, "n_estimators": 50, "num_leaves": 31, "reg_alpha": 0, "reg_lambda": 1.5, "subsample": 0.65, "subsample_freq": 1}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "252aae2e02d15872ec9e91c7c9a3e6ae72156ee3"}
+2019-04-25 09:42:56,745 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:42:56,747 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_3]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:42:56,761 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_3]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:42:56,798 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:56,799 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_3] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:42:56,800 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_3] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:42:56,800 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_3
+2019-04-25 09:42:56,802 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:56,804 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:56,806 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:42:56,806 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": true}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "LightGBMRegressor", "module": "automl.client.core.common.model_wrappers", "param_args": [], "param_kwargs": {"boosting_type": "gbdt", "colsample_bytree": 1, "learning_rate": 0.1052678947368421, "max_bin": 7, "max_depth": 7, "min_data_in_leaf": 0.001953125, "min_split_gain": 0.7368421052631579, "n_estimators": 50, "num_leaves": 31, "reg_alpha": 0, "reg_lambda": 1.5, "subsample": 0.65, "subsample_freq": 1}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "252aae2e02d15872ec9e91c7c9a3e6ae72156ee3"}.
+2019-04-25 09:42:56,807 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:42:56,808 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:42:58,197 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:08,199 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:09,354 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:43:09,355 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:43:09,371 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:10,536 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1164.56[ms]
+2019-04-25 09:43:10,537 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:10,538 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:10,564 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=26.0[ms]
+2019-04-25 09:43:10,565 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:10,588 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=50.99[ms]
+2019-04-25 09:43:10,598 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:10,872 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=274.8[ms]
+2019-04-25 09:43:10,874 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:10,875 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:10,895 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=20.01[ms]
+2019-04-25 09:43:10,896 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:10,905 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=31.0[ms]
+2019-04-25 09:43:10,913 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:11,090 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=176.64[ms]
+2019-04-25 09:43:11,091 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:11,092 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:11,117 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=24.0[ms]
+2019-04-25 09:43:11,117 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:11,134 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=43.01[ms]
+2019-04-25 09:43:11,140 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:11,350 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=210.06[ms]
+2019-04-25 09:43:11,350 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:11,351 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:11,367 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=16.0[ms]
+2019-04-25 09:43:11,368 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:11,379 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=28.0[ms]
+2019-04-25 09:43:11,389 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:11,549 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=159.75[ms]
+2019-04-25 09:43:11,549 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:11,550 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:11,565 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=15.0[ms]
+2019-04-25 09:43:11,566 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:11,579 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=29.0[ms]
+2019-04-25 09:43:11,579 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=2223.82[ms]
+2019-04-25 09:43:11,581 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:43:11,586 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=5.37[ms]
+2019-04-25 09:43:11,587 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=2233.31[ms]
+2019-04-25 09:43:11,659 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:43:11,661 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:43:11,682 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:11,942 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=259.14[ms]
+2019-04-25 09:43:11,943 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:11,943 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:12,033 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=89.89[ms]
+2019-04-25 09:43:12,033 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:12,062 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=117.88[ms]
+2019-04-25 09:43:12,062 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=400.27[ms]
+2019-04-25 09:43:12,063 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=403.27[ms]
+2019-04-25 09:43:12,064 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=15256.07[ms]
+2019-04-25 09:43:12,066 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:12,067 - INFO - 161 : Pipeline execution finished with a score of 0.7643909867630484
+2019-04-25 09:43:12,068 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:43:12,068 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:43:17,948 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:43:17,950 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:43:17,982 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:43:18,014 - INFO - 267 : pipeline_id:252aae2e02d15872ec9e91c7c9a3e6ae72156ee3, The following metrics have been logged for the child run: {'normalized_root_mean_squared_error': 0.25187664980612784, 'normalized_mean_absolute_error': 0.14437716675946732, 'normalized_root_mean_squared_log_error': 0.25417349210246076, 'root_mean_squared_error': 0.25187664980612784, 'mean_absolute_error': 0.14437716675946732, 'residuals': <class 'dict'>, 'r2_score': 0.7116823199833563, 'spearman_correlation': 0.7643909867630484, 'normalized_median_absolute_error': 0.05082793994683075, 'root_mean_squared_log_error': 0.17617963942389622, 'predicted_true': <class 'dict'>, 'median_absolute_error': 0.05082793994683075, 'explained_variance': 0.7118989229666793, 'predict_time': <class 'float'>, 'train time': <class 'float'>, 'fit_time': <class 'float'>}.
+2019-04-25 09:43:18,204 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:28,208 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:29,432 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=17364.3[ms]
+2019-04-25 09:43:32,315 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:32,435 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=35689.78 [ms]
+2019-04-25 09:43:32,449 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=39146.82 [ms]
+2019-04-25 09:43:32,451 - INFO - 566 : Start iteration: 4
+2019-04-25 09:43:32,455 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:43:32,466 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:43:32,468 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:43:34,436 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1969.52 [ms]
+2019-04-25 09:43:34,437 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": "sqrt", "min_samples_leaf": 0.02840067375118317, "min_samples_split": 0.0008991789964660114, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "a416933e627886c7d680973080cd372deba23c86"}
+2019-04-25 09:43:36,105 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:43:36,108 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_4]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:43:36,109 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_4]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:43:36,114 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:36,115 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_4] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:43:36,115 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_4] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:43:36,116 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_4
+2019-04-25 09:43:36,118 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:36,121 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:36,123 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:36,123 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": "sqrt", "min_samples_leaf": 0.02840067375118317, "min_samples_split": 0.0008991789964660114, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "a416933e627886c7d680973080cd372deba23c86"}.
+2019-04-25 09:43:36,124 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:43:36,125 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:43:38,220 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:47,353 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:43:47,358 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:43:47,373 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:48,135 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=762.42[ms]
+2019-04-25 09:43:48,136 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:48,136 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:48,225 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:48,374 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=236.89[ms]
+2019-04-25 09:43:48,375 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:48,460 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=322.89[ms]
+2019-04-25 09:43:48,471 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:48,763 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=292.86[ms]
+2019-04-25 09:43:48,764 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:48,766 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:48,783 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=17.2[ms]
+2019-04-25 09:43:48,784 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:48,803 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=38.78[ms]
+2019-04-25 09:43:48,820 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:49,040 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=219.8[ms]
+2019-04-25 09:43:49,041 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:49,042 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:49,059 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=17.1[ms]
+2019-04-25 09:43:49,060 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:49,080 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=38.35[ms]
+2019-04-25 09:43:49,092 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:49,283 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=191.39[ms]
+2019-04-25 09:43:49,285 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:49,286 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:49,292 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=6.11[ms]
+2019-04-25 09:43:49,293 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:49,309 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=24.11[ms]
+2019-04-25 09:43:49,320 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:49,534 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=213.97[ms]
+2019-04-25 09:43:49,535 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:49,536 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:49,548 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=11.31[ms]
+2019-04-25 09:43:49,548 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:49,564 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=28.45[ms]
+2019-04-25 09:43:49,565 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=2206.22[ms]
+2019-04-25 09:43:49,567 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:43:49,575 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=8.0[ms]
+2019-04-25 09:43:49,576 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=2223.19[ms]
+2019-04-25 09:43:49,612 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:43:49,613 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:43:49,615 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:43:49,881 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=265.61[ms]
+2019-04-25 09:43:49,882 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:43:49,882 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:43:49,918 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=35.88[ms]
+2019-04-25 09:43:49,918 - INFO - 749 : Computing regression metrics
+2019-04-25 09:43:49,943 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=61.53[ms]
+2019-04-25 09:43:49,944 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=331.14[ms]
+2019-04-25 09:43:49,945 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=332.14[ms]
+2019-04-25 09:43:49,948 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=13823.22[ms]
+2019-04-25 09:43:49,950 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:43:49,951 - INFO - 161 : Pipeline execution finished with a score of 0.7368826276531453
+2019-04-25 09:43:49,952 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:43:49,952 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:43:54,512 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:43:54,515 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:43:54,518 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:43:54,519 - INFO - 267 : pipeline_id:a416933e627886c7d680973080cd372deba23c86, The following metrics have been logged for the child run: {'predicted_true': <class 'dict'>, 'mean_absolute_error': 0.38280408060866394, 'spearman_correlation': 0.7368826276531453, 'root_mean_squared_log_error': 0.28754835011170465, 'normalized_mean_absolute_error': 0.38280408060866394, 'residuals': <class 'dict'>, 'normalized_median_absolute_error': 0.31739934643044465, 'explained_variance': 0.23334824729755405, 'normalized_root_mean_squared_error': 0.4110182545294401, 'median_absolute_error': 0.31739934643044465, 'normalized_root_mean_squared_log_error': 0.4148445787219598, 'root_mean_squared_error': 0.4110182545294401, 'r2_score': 0.23250808068954099, 'fit_time': <class 'float'>, 'train time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:43:58,259 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:02,694 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=12741.47[ms]
+2019-04-25 09:44:06,343 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:06,345 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=30240.11 [ms]
+2019-04-25 09:44:06,414 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=33958.79 [ms]
+2019-04-25 09:44:06,417 - INFO - 566 : Start iteration: 5
+2019-04-25 09:44:06,421 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:44:06,422 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:44:06,424 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:44:07,863 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1441.09 [ms]
+2019-04-25 09:44:07,864 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.6, "min_samples_leaf": 0.003466237459044996, "min_samples_split": 0.0008991789964660114, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "bed23a38f720a3386d00fdab5790f4f3cc8fcdd8"}
+2019-04-25 09:44:08,266 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:09,571 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:44:09,572 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_5]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:44:09,574 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_5]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:44:09,580 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:09,582 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_5] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:44:09,583 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_5] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:44:09,583 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_5
+2019-04-25 09:44:09,587 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:09,590 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:09,595 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:09,597 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.6, "min_samples_leaf": 0.003466237459044996, "min_samples_split": 0.0008991789964660114, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "bed23a38f720a3386d00fdab5790f4f3cc8fcdd8"}.
+2019-04-25 09:44:09,599 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:44:09,601 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:44:18,269 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:22,962 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:44:22,962 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:44:22,970 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:24,414 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1444.26[ms]
+2019-04-25 09:44:24,415 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:24,416 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:24,424 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=8.01[ms]
+2019-04-25 09:44:24,426 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:24,444 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=28.98[ms]
+2019-04-25 09:44:24,454 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:25,484 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1029.76[ms]
+2019-04-25 09:44:25,485 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:25,485 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:25,490 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=5.01[ms]
+2019-04-25 09:44:25,491 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:25,579 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=93.37[ms]
+2019-04-25 09:44:25,591 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:26,957 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1366.69[ms]
+2019-04-25 09:44:26,957 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:26,958 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:26,963 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=5.0[ms]
+2019-04-25 09:44:26,963 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:26,973 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=14.06[ms]
+2019-04-25 09:44:26,982 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:28,125 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1143.05[ms]
+2019-04-25 09:44:28,125 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:28,126 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:28,131 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=5.0[ms]
+2019-04-25 09:44:28,131 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:28,140 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=15.0[ms]
+2019-04-25 09:44:28,147 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:28,275 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:29,443 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1295.84[ms]
+2019-04-25 09:44:29,444 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:29,444 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:29,453 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=9.0[ms]
+2019-04-25 09:44:29,453 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:29,547 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=103.22[ms]
+2019-04-25 09:44:29,548 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=6585.68[ms]
+2019-04-25 09:44:29,550 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:44:29,557 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=7.01[ms]
+2019-04-25 09:44:29,558 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=6595.69[ms]
+2019-04-25 09:44:29,575 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:44:29,577 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:44:29,579 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:44:30,837 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1257.87[ms]
+2019-04-25 09:44:30,838 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:44:30,839 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:44:30,913 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=74.23[ms]
+2019-04-25 09:44:30,914 - INFO - 749 : Computing regression metrics
+2019-04-25 09:44:30,938 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=100.21[ms]
+2019-04-25 09:44:30,939 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=1362.03[ms]
+2019-04-25 09:44:30,940 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=1365.08[ms]
+2019-04-25 09:44:30,941 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=21340.1[ms]
+2019-04-25 09:44:30,944 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:30,944 - INFO - 161 : Pipeline execution finished with a score of 0.7596161299153943
+2019-04-25 09:44:30,945 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:44:30,946 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:44:34,547 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:44:34,550 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:44:34,553 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:44:34,656 - INFO - 267 : pipeline_id:bed23a38f720a3386d00fdab5790f4f3cc8fcdd8, The following metrics have been logged for the child run: {'r2_score': 0.667571236967266, 'normalized_median_absolute_error': 0.12503216598717834, 'spearman_correlation': 0.7596161299153943, 'predicted_true': <class 'dict'>, 'mean_absolute_error': 0.1892156279727164, 'normalized_root_mean_squared_error': 0.2704903770158536, 'residuals': <class 'dict'>, 'normalized_root_mean_squared_log_error': 0.27526321137968346, 'root_mean_squared_error': 0.2704903770158536, 'median_absolute_error': 0.12503216598717834, 'root_mean_squared_log_error': 0.19079791887970385, 'explained_variance': 0.6677022632651413, 'normalized_mean_absolute_error': 0.1892156279727164, 'fit_time': <class 'float'>, 'train time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:44:38,282 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:48,291 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:51,140 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=20193.97[ms]
+2019-04-25 09:44:54,073 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:54,084 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=44513.75 [ms]
+2019-04-25 09:44:54,182 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=47762.74 [ms]
+2019-04-25 09:44:54,183 - INFO - 566 : Start iteration: 6
+2019-04-25 09:44:54,185 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:44:54,186 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:44:54,188 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:44:55,842 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1656.07 [ms]
+2019-04-25 09:44:55,844 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.6, "min_samples_leaf": 0.006151578686713196, "min_samples_split": 0.03708777411774474, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "346964bf5a642fbfaec3040169d7b72671bc35b1"}
+2019-04-25 09:44:57,622 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:44:57,623 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_6]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:44:57,623 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_6]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:44:57,625 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:57,626 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_6] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:44:57,627 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_6] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:44:57,627 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_6
+2019-04-25 09:44:57,629 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:57,658 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:57,671 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:44:57,671 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.6, "min_samples_leaf": 0.006151578686713196, "min_samples_split": 0.03708777411774474, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "346964bf5a642fbfaec3040169d7b72671bc35b1"}.
+2019-04-25 09:44:57,672 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:44:57,672 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:44:58,296 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:08,301 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:10,369 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:45:10,370 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:45:10,388 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:11,518 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1130.19[ms]
+2019-04-25 09:45:11,519 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:11,521 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:11,531 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=10.11[ms]
+2019-04-25 09:45:11,532 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:11,561 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=41.99[ms]
+2019-04-25 09:45:11,575 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:12,075 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=500.78[ms]
+2019-04-25 09:45:12,075 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:12,076 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:12,082 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=6.0[ms]
+2019-04-25 09:45:12,082 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:12,097 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=21.0[ms]
+2019-04-25 09:45:12,106 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:12,529 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=423.51[ms]
+2019-04-25 09:45:12,530 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:12,530 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:12,539 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=9.0[ms]
+2019-04-25 09:45:12,540 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:12,555 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=25.0[ms]
+2019-04-25 09:45:12,563 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:13,058 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=495.35[ms]
+2019-04-25 09:45:13,059 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:13,059 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:13,066 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.0[ms]
+2019-04-25 09:45:13,066 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:13,079 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=19.3[ms]
+2019-04-25 09:45:13,087 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:13,525 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=437.06[ms]
+2019-04-25 09:45:13,526 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:13,526 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:13,533 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.02[ms]
+2019-04-25 09:45:13,534 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:13,546 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=20.02[ms]
+2019-04-25 09:45:13,547 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=3176.62[ms]
+2019-04-25 09:45:13,549 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:45:13,556 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=7.0[ms]
+2019-04-25 09:45:13,557 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=3188.74[ms]
+2019-04-25 09:45:13,580 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:45:13,584 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:45:13,587 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:45:14,132 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=545.8[ms]
+2019-04-25 09:45:14,133 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:45:14,133 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:45:14,142 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=9.0[ms]
+2019-04-25 09:45:14,144 - INFO - 749 : Computing regression metrics
+2019-04-25 09:45:14,164 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=31.01[ms]
+2019-04-25 09:45:14,165 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=581.74[ms]
+2019-04-25 09:45:14,165 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=585.75[ms]
+2019-04-25 09:45:14,167 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=16494.48[ms]
+2019-04-25 09:45:14,168 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:14,169 - INFO - 161 : Pipeline execution finished with a score of 0.7529902900203036
+2019-04-25 09:45:14,169 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:45:14,171 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:45:17,044 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:45:17,045 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:45:17,046 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:45:17,048 - INFO - 267 : pipeline_id:346964bf5a642fbfaec3040169d7b72671bc35b1, The following metrics have been logged for the child run: {'median_absolute_error': 0.182476480278426, 'residuals': <class 'dict'>, 'explained_variance': 0.6119443817161174, 'normalized_median_absolute_error': 0.182476480278426, 'root_mean_squared_log_error': 0.20563645531955452, 'spearman_correlation': 0.7529902900203036, 'predicted_true': <class 'dict'>, 'normalized_mean_absolute_error': 0.22363743425926946, 'normalized_root_mean_squared_error': 0.2922977378033343, 'normalized_root_mean_squared_log_error': 0.2966706943155062, 'r2_score': 0.611730558158104, 'mean_absolute_error': 0.22363743425926946, 'root_mean_squared_error': 0.2922977378033343, 'train time': <class 'float'>, 'fit_time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:45:18,305 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:28,309 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:38,314 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:48,319 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:45:58,324 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:08,327 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:18,329 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:28,354 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:38,360 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:43,976 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=89805.19[ms]
+2019-04-25 09:46:48,373 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:48,541 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:48,542 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=110920.12 [ms]
+2019-04-25 09:46:48,545 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=114359.85 [ms]
+2019-04-25 09:46:48,545 - INFO - 566 : Start iteration: 7
+2019-04-25 09:46:48,546 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:46:48,547 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:46:48,548 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:46:50,174 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1626.87 [ms]
+2019-04-25 09:46:50,175 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "DecisionTreeRegressor", "module": "sklearn.tree", "param_args": [], "param_kwargs": {"criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.002742668396429022, "min_samples_split": 0.00310675990983383, "splitter": "best"}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "3ed638286b28fa269f4181502ad5799977f082b0"}
+2019-04-25 09:46:51,466 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:46:51,468 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_7]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:46:51,469 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_7]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:46:51,473 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:51,476 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_7] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:46:51,477 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_7] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:46:51,478 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_7
+2019-04-25 09:46:51,480 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:51,484 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:51,487 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:46:51,489 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "DecisionTreeRegressor", "module": "sklearn.tree", "param_args": [], "param_kwargs": {"criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.002742668396429022, "min_samples_split": 0.00310675990983383, "splitter": "best"}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "3ed638286b28fa269f4181502ad5799977f082b0"}.
+2019-04-25 09:46:51,495 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:46:51,546 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:46:58,376 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:04,852 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:47:04,854 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:47:04,872 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:05,457 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=584.66[ms]
+2019-04-25 09:47:05,458 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:05,459 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:05,494 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=35.0[ms]
+2019-04-25 09:47:05,494 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:05,870 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=411.1[ms]
+2019-04-25 09:47:05,948 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:06,228 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=279.33[ms]
+2019-04-25 09:47:06,228 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:06,229 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:06,230 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=1.1[ms]
+2019-04-25 09:47:06,231 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:06,245 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=17.13[ms]
+2019-04-25 09:47:06,289 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:06,544 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=254.94[ms]
+2019-04-25 09:47:06,545 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:06,546 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:06,549 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=3.0[ms]
+2019-04-25 09:47:06,550 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:06,561 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=16.37[ms]
+2019-04-25 09:47:06,573 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:06,837 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=264.34[ms]
+2019-04-25 09:47:06,838 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:06,838 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:06,841 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=2.84[ms]
+2019-04-25 09:47:06,841 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:06,856 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=17.84[ms]
+2019-04-25 09:47:06,867 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:07,095 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=227.97[ms]
+2019-04-25 09:47:07,096 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:07,096 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:07,099 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=3.0[ms]
+2019-04-25 09:47:07,099 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:07,110 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=14.01[ms]
+2019-04-25 09:47:07,111 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=2257.21[ms]
+2019-04-25 09:47:07,112 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:47:07,117 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=4.99[ms]
+2019-04-25 09:47:07,119 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=2266.21[ms]
+2019-04-25 09:47:07,126 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:47:07,128 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:47:07,147 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:07,501 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=354.24[ms]
+2019-04-25 09:47:07,501 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:07,502 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:07,510 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.21[ms]
+2019-04-25 09:47:07,511 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:07,533 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=31.68[ms]
+2019-04-25 09:47:07,536 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=407.21[ms]
+2019-04-25 09:47:07,537 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=410.3[ms]
+2019-04-25 09:47:07,537 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=15990.94[ms]
+2019-04-25 09:47:07,540 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:07,540 - INFO - 161 : Pipeline execution finished with a score of 0.7885654577696032
+2019-04-25 09:47:07,541 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:47:07,541 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:47:08,399 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:11,020 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:47:11,080 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:47:11,081 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:47:11,082 - INFO - 267 : pipeline_id:3ed638286b28fa269f4181502ad5799977f082b0, The following metrics have been logged for the child run: {'residuals': <class 'dict'>, 'root_mean_squared_error': 0.255475469677248, 'root_mean_squared_log_error': 0.17898461997628107, 'normalized_root_mean_squared_error': 0.255475469677248, 'predicted_true': <class 'dict'>, 'normalized_mean_absolute_error': 0.11762314880456962, 'mean_absolute_error': 0.11762314880456962, 'spearman_correlation': 0.7885654577696032, 'normalized_median_absolute_error': 0.0, 'median_absolute_error': 0.0, 'normalized_root_mean_squared_log_error': 0.2582202236351764, 'explained_variance': 0.7037386242865271, 'r2_score': 0.7034664907879881, 'fit_time': <class 'float'>, 'train time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:47:16,448 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=8906.98[ms]
+2019-04-25 09:47:18,404 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:19,839 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:19,842 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=28375.71 [ms]
+2019-04-25 09:47:19,846 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=31299.52 [ms]
+2019-04-25 09:47:19,848 - INFO - 566 : Start iteration: 8
+2019-04-25 09:47:19,850 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:47:19,851 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:47:19,852 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:47:21,360 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1508.69 [ms]
+2019-04-25 09:47:21,362 - INFO - 609 : Received pipeline: {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.01600296187889058, "min_samples_split": 0.015297321160913582, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "cdff8109d4b80543f1a2fc01b2c4f96987ea288b"}
+2019-04-25 09:47:23,005 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:47:23,007 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_8]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:47:23,010 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_8]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:47:23,015 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:23,017 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_8] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:47:23,020 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_8] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:47:23,020 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_8
+2019-04-25 09:47:23,024 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:23,045 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:23,064 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:23,093 - INFO - 141 : Start executing pipeline {"objects": [{"class_name": "MaxAbsScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.01600296187889058, "min_samples_split": 0.015297321160913582, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "cdff8109d4b80543f1a2fc01b2c4f96987ea288b"}.
+2019-04-25 09:47:23,094 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:47:23,095 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:47:28,447 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:34,890 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:47:34,892 - INFO - 148 : ActivityStarted: RunCV
+2019-04-25 09:47:34,906 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:35,934 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=1027.62[ms]
+2019-04-25 09:47:35,936 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:35,937 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:35,949 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=12.98[ms]
+2019-04-25 09:47:35,950 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:35,981 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=44.98[ms]
+2019-04-25 09:47:35,997 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:36,656 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=659.06[ms]
+2019-04-25 09:47:36,657 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:36,657 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:36,663 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=6.01[ms]
+2019-04-25 09:47:36,663 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:36,670 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=13.0[ms]
+2019-04-25 09:47:36,678 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:37,119 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=440.31[ms]
+2019-04-25 09:47:37,123 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:37,124 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:37,132 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.95[ms]
+2019-04-25 09:47:37,132 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:37,142 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=19.93[ms]
+2019-04-25 09:47:37,152 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:37,668 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=517.46[ms]
+2019-04-25 09:47:37,669 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:37,670 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:37,677 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=7.79[ms]
+2019-04-25 09:47:37,678 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:37,696 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=25.0[ms]
+2019-04-25 09:47:37,705 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:38,283 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=577.29[ms]
+2019-04-25 09:47:38,284 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:38,284 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:38,292 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=8.0[ms]
+2019-04-25 09:47:38,293 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:38,304 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=19.95[ms]
+2019-04-25 09:47:38,304 - INFO - 162 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=3411.44[ms]
+2019-04-25 09:47:38,308 - INFO - 148 : ActivityStarted: RunCVMean
+2019-04-25 09:47:38,313 - INFO - 162 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=5.15[ms]
+2019-04-25 09:47:38,314 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=3423.45[ms]
+2019-04-25 09:47:38,327 - INFO - 148 : ActivityStarted: Run
+2019-04-25 09:47:38,329 - INFO - 148 : ActivityStarted: TrainFull
+2019-04-25 09:47:38,345 - INFO - 148 : ActivityStarted: TimeFit
+2019-04-25 09:47:38,475 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:39,032 - INFO - 162 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=687.39[ms]
+2019-04-25 09:47:39,033 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:47:39,033 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:47:39,059 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=26.15[ms]
+2019-04-25 09:47:39,061 - INFO - 749 : Computing regression metrics
+2019-04-25 09:47:39,084 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=50.18[ms]
+2019-04-25 09:47:39,084 - INFO - 162 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=756.44[ms]
+2019-04-25 09:47:39,086 - INFO - 162 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=758.68[ms]
+2019-04-25 09:47:39,086 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=15990.92[ms]
+2019-04-25 09:47:39,089 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:39,089 - INFO - 161 : Pipeline execution finished with a score of 0.7495764289759743
+2019-04-25 09:47:39,089 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:47:39,090 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:47:48,479 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:47:53,713 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2019-04-25 09:47:53,715 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2019-04-25 09:47:53,717 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:47:53,747 - INFO - 267 : pipeline_id:cdff8109d4b80543f1a2fc01b2c4f96987ea288b, The following metrics have been logged for the child run: {'explained_variance': 0.6227224719353528, 'normalized_root_mean_squared_error': 0.2882705514146425, 'normalized_mean_absolute_error': 0.213630259070188, 'normalized_median_absolute_error': 0.15877939686897083, 'root_mean_squared_error': 0.2882705514146425, 'median_absolute_error': 0.15877939686897083, 'r2_score': 0.6225219572962628, 'root_mean_squared_log_error': 0.20299478147529365, 'predicted_true': <class 'dict'>, 'residuals': <class 'dict'>, 'spearman_correlation': 0.7495764289759743, 'mean_absolute_error': 0.213630259070188, 'normalized_root_mean_squared_log_error': 0.29285956456074497, 'train time': <class 'float'>, 'fit_time': <class 'float'>, 'predict_time': <class 'float'>}.
+2019-04-25 09:47:58,484 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:03,756 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=24665.44[ms]
+2019-04-25 09:48:07,552 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:07,557 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=44552.6 [ms]
+2019-04-25 09:48:07,646 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=47796.14 [ms]
+2019-04-25 09:48:07,647 - INFO - 566 : Start iteration: 9
+2019-04-25 09:48:07,650 - INFO - 93 : ActivityStarted, FitIteration
+2019-04-25 09:48:07,652 - INFO - 93 : ActivityStarted, GetPipeline
+2019-04-25 09:48:07,653 - INFO - 811 : Querying Jasmine for next pipeline.
+2019-04-25 09:48:08,495 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:08,836 - INFO - 114 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1184.61 [ms]
+2019-04-25 09:48:08,837 - INFO - 609 : Received pipeline: {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'automated-ml-regression', 'path': './automated-ml-regression', 'subscription_id': '20c286f5-1d7a-49dd-b06f-a0a852d9173c', 'resource_group': 'AutoML', 'workspace_name': 'aml_autoML', 'iterations': 10, 'primary_metric': 'spearman_correlation', 'data_script': None, 'compute_target': 'local', 'task_type': 'regression', 'validation_size': 0.0, 'n_cross_validations': 5, 'y_min': 0.0, 'y_max': 1.0, 'num_classes': None, 'preprocess': True, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 1, 'max_concurrent_iterations': 1, 'iteration_timeout_minutes': 1, 'mem_in_mb': None, 'enforce_time_on_windows': True, 'experiment_timeout_minutes': None, 'experiment_exit_score': None, 'whitelist_models': None, 'blacklist_algos': ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automated_ml_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'INFO', 'send_telemetry': True, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 10, 'enable_tf': False, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9","experiment_name":"automated-ml-regression","workspace_name":"aml_autoML","subscription_id":"20c286f5-1d7a-49dd-b06f-a0a852d9173c","resource_group_name":"AutoML"}}]}
+2019-04-25 09:48:10,278 - INFO - 93 : ActivityStarted, fit_pipeline
+2019-04-25 09:48:10,278 - INFO - 185 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9]CPU logical cores: 4, CPU cores: 2, virtual memory: 17101430784, swap memory: 24349188096.
+2019-04-25 09:48:10,279 - INFO - 191 : [RunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9]Platform information: Windows-10-10.0.17763-SP0.
+2019-04-25 09:48:10,281 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:10,282 - INFO - 72 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9] X datatype is <class 'scipy.sparse.csr.csr_matrix'>, shape is (12000, 118), datasize is 1445620.
+2019-04-25 09:48:10,282 - INFO - 77 : [ParentRunId:AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9] y datatype is <class 'numpy.ndarray'>, shape is (12000,), datasize is 96096.
+2019-04-25 09:48:10,283 - INFO - 93 : Using child run AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9
+2019-04-25 09:48:10,285 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:10,287 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:10,290 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:10,290 - INFO - 141 : Start executing pipeline {"pipeline_id":"__AutoML_Ensemble__","objects":[{"module":"azureml.train.automl.ensemble","class_name":"Ensemble","spec_class":"sklearn","param_args":[],"param_kwargs":{"automl_settings":"{'name': 'automated-ml-regression', 'path': './automated-ml-regression', 'subscription_id': '20c286f5-1d7a-49dd-b06f-a0a852d9173c', 'resource_group': 'AutoML', 'workspace_name': 'aml_autoML', 'iterations': 10, 'primary_metric': 'spearman_correlation', 'data_script': None, 'compute_target': 'local', 'task_type': 'regression', 'validation_size': 0.0, 'n_cross_validations': 5, 'y_min': 0.0, 'y_max': 1.0, 'num_classes': None, 'preprocess': True, 'lag_length': 0, 'is_timeseries': False, 'max_cores_per_iteration': 1, 'max_concurrent_iterations': 1, 'iteration_timeout_minutes': 1, 'mem_in_mb': None, 'enforce_time_on_windows': True, 'experiment_timeout_minutes': None, 'experiment_exit_score': None, 'whitelist_models': None, 'blacklist_algos': ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM'], 'auto_blacklist': True, 'blacklist_samples_reached': True, 'exclude_nan_labels': True, 'verbosity': 20, 'debug_log': 'automated_ml_errors.log', 'show_warnings': False, 'model_explainability': False, 'service_url': None, 'sdk_url': None, 'sdk_packages': None, 'telemetry_verbosity': 'INFO', 'send_telemetry': True, 'spark_service': None, 'metrics': None, 'enable_ensembling': True, 'ensemble_iterations': 10, 'enable_tf': False, 'enable_cache': True, 'enable_subsampling': False, 'subsample_seed': None, 'cost_mode': 0, 'metric_operation': 'maximize'}","ensemble_run_id":"AutoML_7b286b5c-22d4-403a-9936-665657ae8eb5_9","experiment_name":"automated-ml-regression","workspace_name":"aml_autoML","subscription_id":"20c286f5-1d7a-49dd-b06f-a0a852d9173c","resource_group_name":"AutoML"}}]}.
+2019-04-25 09:48:10,291 - INFO - 143 : Running with the following AutoML settings:
+ - name: automated-ml-regression
+ - subscription_id: 20c286f5-1d7a-49dd-b06f-a0a852d9173c
+ - iterations: 10
+ - primary_metric: spearman_correlation
+ - compute_target: local
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 0.0
+ - y_max: 1.0
+ - num_classes: None
+ - preprocess: True
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 1
+ - mem_in_mb: None
+ - enforce_time_on_windows: True
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'XGBoostRegressor', 'KNeighborsClassifier', 'KNeighborsRegressor', 'SVCWrapper', 'kNN', 'kNN regressor', 'SVM']
+ - auto_blacklist: True
+ - blacklist_samples_reached: True
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - spark_context: None
+ - spark_service: None
+ - metrics: None
+ - enable_ensembling: True
+ - ensemble_iterations: 10
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2019-04-25 09:48:10,294 - INFO - 229 : ActivityStarted: RunPipeline
+2019-04-25 09:48:18,502 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:22,171 - INFO - 148 : ActivityStarted: RunEnsembling
+2019-04-25 09:48:22,972 - INFO - 148 : ActivityStarted: TimeFitEnsemble
+2019-04-25 09:48:28,535 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:36,728 - INFO - 186 : Fetching fitted models for best 9 previous iterations
+2019-04-25 09:48:36,730 - INFO - 229 : ActivityStarted: DownloadEnsemblingModels
+2019-04-25 09:48:38,544 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:47,818 - INFO - 243 : ActivityCompleted: Activity=DownloadEnsemblingModels, HowEnded=Success, Duration=11087.41[ms]
+2019-04-25 09:48:48,547 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:48:56,297 - INFO - 92 : Fetched 9 fitted pipelines in 30 seconds
+2019-04-25 09:48:57,063 - INFO - 102 : Single models scores: [0.74657508 0.78856546 0.73688263 0.72881507 0.75299029 0.74957643
+ 0.76439099 0.76172354 0.75961613]
+2019-04-25 09:48:57,078 - INFO - 134 : Starting ensemble hill climbing. Current ensemble: [0, 1, 2, 3, 4], current score: 0.7667182977370012
+2019-04-25 09:48:57,241 - INFO - 168 : Iteration 0, new best ensemble: [0, 1, 2, 3, 4, 6], new best score :0.7694814035978
+2019-04-25 09:48:57,371 - INFO - 168 : Iteration 1, new best ensemble: [0, 1, 2, 3, 4, 6, 6], new best score :0.7700192183569252
+2019-04-25 09:48:57,502 - INFO - 168 : Iteration 2, new best ensemble: [0, 1, 2, 3, 4, 6, 6, 1], new best score :0.7705015232278637
+2019-04-25 09:48:57,640 - INFO - 168 : Iteration 3, new best ensemble: [0, 1, 2, 3, 4, 6, 6, 1, 8], new best score :0.7708661343242611
+2019-04-25 09:48:57,767 - INFO - 168 : Iteration 4, new best ensemble: [0, 1, 2, 3, 4, 6, 6, 1, 8, 6], new best score :0.7710811793553345
+2019-04-25 09:48:57,768 - INFO - 172 : Final ensemble: [0, 1, 2, 3, 4, 6, 6, 1, 8, 6], score: 0.7710811793553345. Best individual model score: 0.7465750781441362
+2019-04-25 09:48:57,768 - INFO - 179 : Unique models IDs in the ensemble: [0, 1, 2, 3, 4, 6, 8]. Weights: [0.1, 0.2, 0.1, 0.1, 0.1, 0.3, 0.1]
+2019-04-25 09:48:57,769 - INFO - 107 : Selected the pipelines for the ensemble in 1 seconds
+2019-04-25 09:48:58,551 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:49:08,555 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:49:10,365 - INFO - 284 : Ensembled iterations: [2, 7, 4, 0, 6, 3, 5]. Ensembled algos: ['ExtremeRandomTrees', 'DecisionTree', 'RandomForest', 'RandomForest', 'ExtremeRandomTrees', 'LightGBM', 'ExtremeRandomTrees']
+2019-04-25 09:49:10,459 - INFO - 162 : ActivityCompleted: Activity=TimeFitEnsemble, HowEnded=Success, Duration=47486.73[ms]
+2019-04-25 09:49:10,472 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:49:10,473 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:49:10,542 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=69.61[ms]
+2019-04-25 09:49:10,543 - INFO - 749 : Computing regression metrics
+2019-04-25 09:49:10,561 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=89.75[ms]
+2019-04-25 09:49:10,570 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:49:10,571 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:49:10,631 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=60.96[ms]
+2019-04-25 09:49:10,632 - INFO - 749 : Computing regression metrics
+2019-04-25 09:49:10,644 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=73.92[ms]
+2019-04-25 09:49:10,654 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:49:10,655 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:49:10,704 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=49.51[ms]
+2019-04-25 09:49:10,705 - INFO - 749 : Computing regression metrics
+2019-04-25 09:49:10,720 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=65.71[ms]
+2019-04-25 09:49:10,727 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:49:10,729 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:49:10,786 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=57.88[ms]
+2019-04-25 09:49:10,788 - INFO - 749 : Computing regression metrics
+2019-04-25 09:49:10,803 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=74.44[ms]
+2019-04-25 09:49:10,810 - INFO - 148 : ActivityStarted: ComputeMetrics
+2019-04-25 09:49:10,811 - INFO - 148 : ActivityStarted: Predict
+2019-04-25 09:49:10,864 - INFO - 162 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=52.91[ms]
+2019-04-25 09:49:10,865 - INFO - 749 : Computing regression metrics
+2019-04-25 09:49:10,877 - INFO - 162 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=66.37[ms]
+2019-04-25 09:49:10,882 - INFO - 162 : ActivityCompleted: Activity=RunEnsembling, HowEnded=Success, Duration=48712.21[ms]
+2019-04-25 09:49:10,908 - INFO - 243 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=60613.2[ms]
+2019-04-25 09:49:10,963 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:49:10,963 - INFO - 161 : Pipeline execution finished with a score of 0.7710811793553345
+2019-04-25 09:49:10,964 - INFO - 162 : Start logging metrics for child run.
+2019-04-25 09:49:10,964 - INFO - 229 : ActivityStarted: MetricsAndSaveModel
+2019-04-25 09:49:13,900 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2019-04-25 09:49:13,905 - INFO - 267 : pipeline_id:__AutoML_Ensemble__, The following metrics have been logged for the child run: {'normalized_mean_absolute_error': 0.205533275713778, 'r2_score': 0.6774992614115284, 'root_mean_squared_log_error': 0.18659432214542376, 'mean_absolute_error': 0.205533275713778, 'median_absolute_error': 0.15299821282257314, 'root_mean_squared_error': 0.2664400840943093, 'normalized_root_mean_squared_log_error': 0.2691987032172406, 'predicted_true': <class 'dict'>, 'residuals': <class 'dict'>, 'explained_variance': 0.6777657227749714, 'normalized_median_absolute_error': 0.15299821282257314, 'normalized_root_mean_squared_error': 0.2664400840943093, 'spearman_correlation': 0.7710811793553345, 'predict_time': <class 'float'>}.
+2019-04-25 09:49:18,576 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:49:24,556 - INFO - 243 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=13592.66[ms]
+2019-04-25 09:49:27,315 - INFO - 122 : Win32 OpenProcess API call failed: [WinError 5] Access is denied.
+2019-04-25 09:49:27,321 - INFO - 114 : ActivityCompleted: Activity=fit_pipeline, HowEnded=Success, Duration=77044.06 [ms]
+2019-04-25 09:49:27,358 - INFO - 114 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=79708.63 [ms]
+2019-04-25 09:49:27,360 - INFO - 45 : Stopping usage telemetry collection
+2019-04-25 09:49:28,532 - INFO - 597 : Run Complete.
